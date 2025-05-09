@@ -1,0 +1,15 @@
+<RCC>
+  <qresource prefix="menu">
+    <file>icons/microphone.svg</file>
+    <file>icons/reminders.svg</file>
+    <file>icons/statistics.svg</file>
+    <file>icons/information.svg</file>
+    <file>icons/alarmclock.svg</file>
+  </qresource>
+  <qresource prefix="plus">
+    <file>icons/plus.svg</file>
+  </qresource>
+  <qresource prefix="robo">
+    <file>icons/robo.svg</file>
+  </qresource>
+</RCC>
