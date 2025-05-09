@@ -404,7 +404,7 @@ border-radius:30px;</string>
      <zorder>information_icon</zorder>
      <zorder>mic_icon</zorder>
     </widget>
-    <widget class="QWidget" name="alarmPage_alarms">
+    <widget class="QWidget" name="alarmPage">
      <widget class="QPushButton" name="microfon_button_2">
       <property name="geometry">
        <rect>
