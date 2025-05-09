@@ -4,10 +4,12 @@ from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import QApplication
 from PySide6.QtCore import QFile, QIODevice
 
+from ui_files.icons import*
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
-    ui_file_name = "testing_qss.ui"
+    ui_file_name = "ui_files/ui.ui"
     ui_file = QFile(ui_file_name)
     if not ui_file.open(QIODevice.ReadOnly):
         print(f"Cannot open {ui_file_name}: {ui_file.errorString()}")
