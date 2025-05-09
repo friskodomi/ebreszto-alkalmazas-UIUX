@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QWidget
 
-class RemindersView(QWidget):
-    def __init__(self):
+class RemindersView:
+    def __init__(self, remindersView_widget: QWidget):
         super().__init__()
         

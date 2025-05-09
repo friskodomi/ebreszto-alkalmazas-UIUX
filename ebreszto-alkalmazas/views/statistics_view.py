@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QWidget
 
-class StatisticsView(QWidget):
-    def __init__(self):
+class StatisticsView:
+    def __init__(self, statisticsView_widget: QWidget):
         super().__init__()
         

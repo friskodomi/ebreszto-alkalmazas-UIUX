@@ -11,6 +11,7 @@ if __name__ == "__main__":
 
     # Load the UI and show it
     app_controller.load_ui()
+    app_controller.setup_views()
     app_controller.show_view()
 
     sys.exit(app.exec())
