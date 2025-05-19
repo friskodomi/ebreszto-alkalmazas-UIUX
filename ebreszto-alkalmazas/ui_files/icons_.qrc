@@ -1,15 +1,22 @@
 <RCC>
   <qresource prefix="menu">
+    <file>icons/home.png</file>
     <file>icons/microphone.svg</file>
     <file>icons/reminders.svg</file>
     <file>icons/statistics.svg</file>
     <file>icons/information.svg</file>
     <file>icons/alarmclock.svg</file>
   </qresource>
-  <qresource prefix="plus">
-    <file>icons/plus.svg</file>
+  <qresource prefix="icon">
+    <file>icons/open.png</file>
+    <file>icons/plus.png</file>
+  </qresource>
+  <qresource prefix="wholescreens">
+    <file>screens/statistics.png</file>
+    <file>screens/alarms.png</file>
+    <file>screens/mainscreen.png</file>
   </qresource>
   <qresource prefix="robo">
-    <file>icons/robo.svg</file>
+    <file>icons/roboto.png</file>
   </qresource>
 </RCC>
