@@ -5,7 +5,7 @@
     <file>icons/reminders.svg</file>
     <file>icons/statistics.svg</file>
     <file>icons/information.svg</file>
-    <file>icons/alarmclock.svg</file>
+    <file>icons/alarm.png</file>
   </qresource>
   <qresource prefix="icon">
     <file>icons/open.png</file>
@@ -13,8 +13,8 @@
   </qresource>
   <qresource prefix="wholescreens">
     <file>screens/statistics.png</file>
-    <file>screens/alarms.png</file>
     <file>screens/mainscreen.png</file>
+    <file>screens/alarms.png</file>
   </qresource>
   <qresource prefix="robo">
     <file>icons/roboto.png</file>

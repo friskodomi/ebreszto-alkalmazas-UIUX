@@ -1,6 +1,7 @@
 import sys
 from PySide6.QtWidgets import QApplication
 from controller import Controller
+from views.statistics_view import StatisticsView
 
 import ui_files.rc_icons
 

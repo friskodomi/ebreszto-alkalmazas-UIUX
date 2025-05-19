@@ -5,14 +5,14 @@ from PySide6.QtWidgets import (
     QPushButton
 )
 
-from ui_files import*
+import ui_files.rc_icons
+from model import Model
 
 class Controller:
     def __init__(self, ui_file_path, model):
         self.ui_file_path = ui_file_path
-        self.model = model
+        self.model = Model()
         self.ui = None
-
     
     def load_ui(self):
         ui_file = QFile(self.ui_file_path)
@@ -30,24 +30,40 @@ class Controller:
         if self.ui:
             self.ui.show()
 
-    # Find a widget by name and type
-    def find_widget(self, widget_type, widget_name: str):
-        widget = self.ui.findChild(widget_type, widget_name)
-        if widget is None:
-            print(f"[DEBUG] Widget '{widget_name}' not found in UI.")
-        else:
-            print(f"[DEBUG] Found widget '{widget_name}': {widget}")
-        return widget
-
     def setup_views(self):
+        from views.home_view import HomeView
         from views.alarms_view import AlarmsView
+        from views.statistics_view import StatisticsView
+
+        self.homeView_widget = self.ui.findChild(QWidget, "homePage")
         self.alarmsView_widget = self.ui.findChild(QWidget, "alarmPage")
+        self.statisticsView_widget = self.ui.findChild(QWidget, "statisticsPage")
 
         # Create the views
+        self.homePage = HomeView(self.homeView_widget)
         self.alarmPage = AlarmsView(self.alarmsView_widget)
-        # Add navigation buttons
-        # self.setup_navigation_buttons()
+        self.statisticsPage = StatisticsView(self.statisticsView_widget)
 
-    # def setup_navigation_buttons(self):
+        # Add navigation buttons
+        self.setup_navigation_buttons()
+
+        self.statisticsPage.connect_controller(self)
+        self.on_range_selected("Week")
+        self.statisticsPage.week_button.setChecked(True)
+
+    def setup_navigation_buttons(self):
         # Find navigation buttons
-        # TODO self.ui.home_button.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.mainPage))
+        self.ui.homeButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.homeView_widget))
+        self.ui.alarmButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.alarmsView_widget))
+        self.ui.statisticsButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.statisticsView_widget))
+
+    def on_range_selected(self, period: str):
+            # Get data from model
+            sleep_data, water_data = self.model.get_statistics(period)
+
+            # Compute averages
+            avg_sleep = self.model.compute_average(sleep_data)
+            avg_water = self.model.compute_average(water_data)
+
+            # Update view with new data
+            self.statisticsPage.update_chart(sleep_data, water_data, avg_sleep, avg_water)
