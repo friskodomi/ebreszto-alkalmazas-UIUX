@@ -46,7 +46,7 @@ class StatisticsView:
             ax.plot(x, data, marker='o', color=color, label=ylabel)
             ax.axhline(avg, linestyle='--', color='gray', label=f'Average ({avg})')
             ax.set_title(title)
-            ax.set_xlabel("Period Unit")
+            ax.set_xlabel("Period")
             ax.set_ylabel(ylabel)
             ax.legend()
             fig.tight_layout()
