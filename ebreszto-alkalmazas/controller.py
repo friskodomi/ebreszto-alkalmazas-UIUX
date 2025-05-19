@@ -34,15 +34,21 @@ class Controller:
         from views.home_view import HomeView
         from views.alarms_view import AlarmsView
         from views.statistics_view import StatisticsView
+        from views.reminders_view import RemindersView
+        from views.chat_view import ChatView
 
         self.homeView_widget = self.ui.findChild(QWidget, "homePage")
         self.alarmsView_widget = self.ui.findChild(QWidget, "alarmPage")
         self.statisticsView_widget = self.ui.findChild(QWidget, "statisticsPage")
+        self.remindersView_widget = self.ui.findChild(QWidget, "remindersPage")
+        self.chatView_widget = self.ui.findChild(QWidget, "chatPage")
 
         # Create the views
         self.homePage = HomeView(self.homeView_widget)
         self.alarmPage = AlarmsView(self.alarmsView_widget)
         self.statisticsPage = StatisticsView(self.statisticsView_widget)
+        self.remindersPage = RemindersView(self.remindersView_widget)
+        self.chatPage = ChatView(self.chatView_widget)
 
         # Add navigation buttons
         self.setup_navigation_buttons()
@@ -53,9 +59,26 @@ class Controller:
 
     def setup_navigation_buttons(self):
         # Find navigation buttons
-        self.ui.homeButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.homeView_widget))
-        self.ui.alarmButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.alarmsView_widget))
-        self.ui.statisticsButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.statisticsView_widget))
+        self.ui.homeButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget
+                                           (self.homeView_widget))
+        self.ui.alarmButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget
+                                            (self.alarmsView_widget))
+        self.ui.statisticsButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget
+                                                 (self.statisticsView_widget))
+        self.ui.remindersButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget
+                                                 (self.remindersView_widget))
+        self.ui.microphoneButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget
+                                                 (self.chatView_widget))
+
+        # Forward buttons on the mainscreen
+        self.ui.f_alarmButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget
+                                                 (self.alarmsView_widget))
+        self.ui.f_statisticsButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget
+                                                 (self.statisticsView_widget))
+        self.ui.f_reminderButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget
+                                                 (self.remindersView_widget))
+        self.ui.f_chatButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget
+                                                 (self.chatView_widget))
 
     def on_range_selected(self, period: str):
             # Get data from model

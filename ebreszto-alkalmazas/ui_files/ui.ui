@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>547</width>
+    <width>550</width>
     <height>921</height>
    </rect>
   </property>
@@ -32,10 +32,10 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="homePage">
-     <widget class="QPushButton" name="f_statistics_button">
+     <widget class="QPushButton" name="f_statisticsButton">
       <property name="geometry">
        <rect>
         <x>210</x>
@@ -67,10 +67,10 @@ border-radius:25px;</string>
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="f_statistics_button_2">
+     <widget class="QPushButton" name="f_reminderButton">
       <property name="geometry">
        <rect>
-        <x>460</x>
+        <x>465</x>
         <y>250</y>
         <width>50</width>
         <height>50</height>
@@ -99,11 +99,11 @@ border-radius:25px;</string>
        </size>
       </property>
      </widget>
-     <widget class="QPushButton" name="f_statistics_button_3">
+     <widget class="QPushButton" name="f_alarmButton">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>627</y>
+        <x>40</x>
+        <y>720</y>
         <width>50</width>
         <height>50</height>
        </rect>
@@ -150,7 +150,7 @@ border-radius:25px;</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="f_statistics_button_4">
+     <widget class="QPushButton" name="f_chatButton">
       <property name="geometry">
        <rect>
         <x>464</x>
@@ -183,10 +183,10 @@ border-radius:25px;</string>
       </property>
      </widget>
      <zorder>label</zorder>
-     <zorder>f_statistics_button</zorder>
-     <zorder>f_statistics_button_2</zorder>
-     <zorder>f_statistics_button_3</zorder>
-     <zorder>f_statistics_button_4</zorder>
+     <zorder>f_statisticsButton</zorder>
+     <zorder>f_reminderButton</zorder>
+     <zorder>f_alarmButton</zorder>
+     <zorder>f_chatButton</zorder>
     </widget>
     <widget class="QWidget" name="alarmPage">
      <widget class="QLabel" name="alarmPageBackgrounds">
@@ -522,50 +522,6 @@ border-radius:30px;</string>
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="informationPage">
-     <widget class="QLabel" name="label_7">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>20</y>
-        <width>531</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #D5E1EA;
-border-radius:30px;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QLabel" name="welcome2_label_4">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>35</y>
-        <width>431</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>MS Shell Dlg 2</family>
-        <pointsize>22</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #D5E1EA;</string>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:22pt; font-weight:600;&quot;&gt;Information&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </widget>
     <widget class="QWidget" name="chatPage">
      <widget class="QListView" name="chat_scroll">
       <property name="geometry">
@@ -636,7 +592,7 @@ border-radius:65px;</string>
      <zorder>microfon_button_7</zorder>
     </widget>
    </widget>
-   <widget class="QPushButton" name="reminders_button">
+   <widget class="QPushButton" name="remindersButton">
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -778,7 +734,7 @@ border-radius:40px;</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="microphone_button">
+   <widget class="QPushButton" name="microphoneButton">
     <property name="geometry">
      <rect>
       <x>450</x>
@@ -847,8 +803,8 @@ border-radius:45px;</string>
    <zorder>alarmButton</zorder>
    <zorder>statisticsButton</zorder>
    <zorder>dsgn_mic_icon_background</zorder>
-   <zorder>microphone_button</zorder>
-   <zorder>reminders_button</zorder>
+   <zorder>microphoneButton</zorder>
+   <zorder>remindersButton</zorder>
    <zorder>homeButton</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
