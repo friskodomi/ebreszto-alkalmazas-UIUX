@@ -410,6 +410,9 @@ border-radius:25px;</string>
         <height>221</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;</string>
+      </property>
       <property name="text">
        <string>TextLabel</string>
       </property>
@@ -423,52 +426,55 @@ border-radius:25px;</string>
         <height>221</height>
        </rect>
       </property>
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="averageSleepLabel">
-      <property name="geometry">
-       <rect>
-        <x>430</x>
-        <y>121</y>
-        <width>81</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Roboto</family>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
       <property name="styleSheet">
        <string notr="true">background-color: transparent;</string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>TextLabel</string>
       </property>
      </widget>
      <widget class="QLabel" name="averageWaterLabel">
       <property name="geometry">
        <rect>
-        <x>430</x>
-        <y>450</y>
-        <width>81</width>
-        <height>41</height>
+        <x>420</x>
+        <y>455</y>
+        <width>91</width>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Roboto</family>
-        <pointsize>14</pointsize>
+        <pointsize>24</pointsize>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: transparent;</string>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;TextLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; color:#4d5e6d;&quot;&gt;18L&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="averageSleepLabel">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>125</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+        <pointsize>24</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; color:#4d5e6d;&quot;&gt;18L&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>
@@ -593,7 +599,7 @@ border-radius:55px;</string>
        <string/>
       </property>
       <property name="icon">
-       <iconset resource="icons_.qrc">
+       <iconset>
         <normaloff>:/menu/icons/microphone.svg</normaloff>:/menu/icons/microphone.svg</iconset>
       </property>
       <property name="iconSize">
@@ -653,7 +659,7 @@ border-radius:40px;</string>
     </property>
     <property name="icon">
      <iconset resource="icons_.qrc">
-      <normaloff>:/menu/icons/reminders.svg</normaloff>:/menu/icons/reminders.svg</iconset>
+      <normaloff>:/menu/icons/bell.png</normaloff>:/menu/icons/bell.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -739,7 +745,7 @@ border-radius:40px;</string>
     </property>
     <property name="icon">
      <iconset resource="icons_.qrc">
-      <normaloff>:/menu/icons/statistics.svg</normaloff>:/menu/icons/statistics.svg</iconset>
+      <normaloff>:/menu/icons/stat.png</normaloff>:/menu/icons/stat.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -795,7 +801,7 @@ border-radius:40px;</string>
     </property>
     <property name="icon">
      <iconset resource="icons_.qrc">
-      <normaloff>:/menu/icons/microphone.svg</normaloff>:/menu/icons/microphone.svg</iconset>
+      <normaloff>:/menu/icons/mic.png</normaloff>:/menu/icons/mic.png</iconset>
     </property>
     <property name="iconSize">
      <size>

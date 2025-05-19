@@ -1,11 +1,10 @@
 <RCC>
   <qresource prefix="menu">
     <file>icons/home.png</file>
-    <file>icons/microphone.svg</file>
-    <file>icons/reminders.svg</file>
-    <file>icons/statistics.svg</file>
-    <file>icons/information.svg</file>
+    <file>icons/bell.png</file>
+    <file>icons/mic.png</file>
     <file>icons/alarm.png</file>
+    <file>icons/stat.png</file>
   </qresource>
   <qresource prefix="icon">
     <file>icons/open.png</file>
