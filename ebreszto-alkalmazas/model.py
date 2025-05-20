@@ -9,9 +9,9 @@ class Model:
         if period == "Week":
             count = 7
         elif period == "Month":
-            count = 14
+            count = 35
         elif period == "Year":
-            count = 21
+            count = 70
         else:
             count = 1
 
