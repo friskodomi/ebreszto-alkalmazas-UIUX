@@ -54,6 +54,7 @@ class Controller:
         self.setup_navigation_buttons()
 
         self.statisticsPage.connect_controller(self)
+        self.alarmPage.connect_controller(self)
         self.on_range_selected("Week")
         self.statisticsPage.week_button.setChecked(True)
 
@@ -90,3 +91,9 @@ class Controller:
 
             # Update view with new data
             self.statisticsPage.update_chart(sleep_data, water_data, avg_sleep, avg_water)
+
+    def show_add_alarm_popup(self):
+        from views.alarm_popup import AlarmPopup
+
+        popup = AlarmPopup("ui_files/popup.ui")
+        popup.exec()

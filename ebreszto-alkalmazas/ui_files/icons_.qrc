@@ -6,6 +6,9 @@
     <file>icons/alarm.png</file>
     <file>icons/stat.png</file>
   </qresource>
+  <qresource prefix="popup">
+    <file>screens/popup_add_alarm.png</file>
+  </qresource>
   <qresource prefix="icon">
     <file>icons/open.png</file>
     <file>icons/plus.png</file>

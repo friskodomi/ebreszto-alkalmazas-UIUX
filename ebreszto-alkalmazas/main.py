@@ -3,6 +3,8 @@ from PySide6.QtWidgets import QApplication
 from controller import Controller
 from views.statistics_view import StatisticsView
 
+from views.alarm_popup import AlarmPopup
+
 import ui_files.rc_icons
 # pyside6-rcc ui_files/icons_.qrc -o ui_files/rc_icons.py
 

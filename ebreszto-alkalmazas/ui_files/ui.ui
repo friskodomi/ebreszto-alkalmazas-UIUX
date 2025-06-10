@@ -32,7 +32,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="homePage">
      <widget class="QPushButton" name="f_statisticsButton">
@@ -281,6 +281,10 @@ border-radius:25px;</string>
         <height>381</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+border-color: transparent;</string>
+      </property>
       <property name="widgetResizable">
        <bool>true</bool>
       </property>
@@ -293,19 +297,6 @@ border-radius:25px;</string>
          <height>379</height>
         </rect>
        </property>
-       <widget class="QScrollBar" name="verticalScrollBar">
-        <property name="geometry">
-         <rect>
-          <x>490</x>
-          <y>0</y>
-          <width>21</width>
-          <height>381</height>
-         </rect>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Vertical</enum>
-        </property>
-       </widget>
       </widget>
      </widget>
     </widget>
