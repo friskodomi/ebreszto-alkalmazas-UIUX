@@ -32,7 +32,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="homePage">
      <widget class="QPushButton" name="f_statisticsButton">
@@ -192,7 +192,7 @@ border-radius:25px;</string>
      <widget class="QLabel" name="alarmPageBackgrounds">
       <property name="geometry">
        <rect>
-        <x>-4</x>
+        <x>0</x>
         <y>-8</y>
         <width>551</width>
         <height>811</height>
@@ -211,8 +211,8 @@ border-radius:25px;</string>
      <widget class="QPushButton" name="alarm_addButton">
       <property name="geometry">
        <rect>
-        <x>470</x>
-        <y>15</y>
+        <x>480</x>
+        <y>50</y>
         <width>50</width>
         <height>50</height>
        </rect>
@@ -239,65 +239,6 @@ border-radius:25px;</string>
         <height>30</height>
        </size>
       </property>
-     </widget>
-     <widget class="QPushButton" name="f_statistics_button_6">
-      <property name="geometry">
-       <rect>
-        <x>470</x>
-        <y>470</y>
-        <width>50</width>
-        <height>50</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Roboto</family>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: transparent;
-border-radius:25px;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="icons_.qrc">
-        <normaloff>:/icon/icons/plus.png</normaloff>:/icon/icons/plus.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>30</width>
-        <height>30</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QScrollArea" name="scrollArea">
-      <property name="geometry">
-       <rect>
-        <x>17</x>
-        <y>70</y>
-        <width>511</width>
-        <height>381</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: transparent;
-border-color: transparent;</string>
-      </property>
-      <property name="widgetResizable">
-       <bool>true</bool>
-      </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>509</width>
-         <height>379</height>
-        </rect>
-       </property>
-      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="statisticsPage">

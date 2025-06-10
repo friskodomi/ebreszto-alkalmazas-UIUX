@@ -2,7 +2,8 @@ from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import QFile
 from PySide6.QtWidgets import (
     QWidget,
-    QPushButton
+    QPushButton,
+    QDialog
 )
 
 import ui_files.rc_icons
@@ -96,4 +97,4 @@ class Controller:
         from views.alarm_popup import AlarmPopup
 
         popup = AlarmPopup("ui_files/popup.ui")
-        popup.exec()
+        result = popup.exec()

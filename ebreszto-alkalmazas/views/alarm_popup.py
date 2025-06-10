@@ -21,5 +21,13 @@ class AlarmPopup(QDialog):
 
         if self.ui is None:
             raise RuntimeError("Failed to load the UI file.")
+        
+         # Buttons
+        self.save_button: QPushButton = self.ui.findChild(QPushButton, "saveButton")
+        self.cancel_button: QPushButton = self.ui.findChild(QPushButton, "cancelButton")
 
         self.show()
+        if self.save_button:
+            self.save_button.clicked.connect(self.close)
+        if self.cancel_button:
+            self.cancel_button.clicked.connect(self.close)
