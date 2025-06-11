@@ -45,11 +45,15 @@ class AlarmsView:
     
 
     def display_alarms(self, alarm_data_list: list[dict]):
-        # Insert alarm widgets before the spacer
+        while self.alarmLayout.count() > 1:
+            item = self.alarmLayout.takeAt(0)
+            if item.widget():
+                item.widget().deleteLater()
+
         for alarm_data in alarm_data_list:
             alarm_widget = self.create_alarm_widget(alarm_data)
-            print(alarm_data)
             self.alarmLayout.insertWidget(self.alarmLayout.count() - 1, alarm_widget)
+
 
 
 
