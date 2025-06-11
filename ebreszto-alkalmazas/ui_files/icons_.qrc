@@ -10,6 +10,8 @@
     <file>screens/popup_add_alarm.png</file>
   </qresource>
   <qresource prefix="icon">
+    <file>icons/edit.png</file>
+    <file>icons/trash.png</file>
     <file>icons/open.png</file>
     <file>icons/plus.png</file>
   </qresource>

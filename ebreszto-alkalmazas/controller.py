@@ -54,10 +54,14 @@ class Controller:
         # Add navigation buttons
         self.setup_navigation_buttons()
 
+        # For the Statistics Page
         self.statisticsPage.connect_controller(self)
         self.alarmPage.connect_controller(self)
         self.on_range_selected("Week")
         self.statisticsPage.week_button.setChecked(True)
+
+        # For the Alarm Page
+        self.update_alarm_list()
 
     def setup_navigation_buttons(self):
         # Find navigation buttons
@@ -95,6 +99,17 @@ class Controller:
 
     def show_add_alarm_popup(self):
         from views.alarm_popup import AlarmPopup
+        self.update_alarm_list()
 
         popup = AlarmPopup("ui_files/popup.ui")
-        result = popup.exec()
+        popup.exec()
+
+    def add_alarm(self, alarm_data):
+        self.model.save_alarm(alarm_data)
+        self.update_alarm_list()
+
+    def update_alarm_list(self):
+        alarms = self.model.get_alarms()
+        self.alarmPage.display_alarms(alarms)
+
+    
