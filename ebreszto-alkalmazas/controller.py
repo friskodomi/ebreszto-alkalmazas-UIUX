@@ -35,7 +35,6 @@ class Controller:
         from views.home_view import HomeView
         from views.alarms_view import AlarmsView
         from views.statistics_view import StatisticsView
-        from views.reminders_view import RemindersView
         from views.chat_view import ChatView
 
         self.homeView_widget = self.ui.findChild(QWidget, "homePage")
@@ -48,7 +47,6 @@ class Controller:
         self.homePage = HomeView(self.homeView_widget)
         self.alarmPage = AlarmsView(self.alarmsView_widget)
         self.statisticsPage = StatisticsView(self.statisticsView_widget)
-        self.remindersPage = RemindersView(self.remindersView_widget)
         self.chatPage = ChatView(self.chatView_widget)
 
         # Add navigation buttons

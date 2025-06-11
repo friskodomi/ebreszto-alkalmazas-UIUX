@@ -9,35 +9,35 @@ class Model:
             {
                 "group_name": "Workout",
                 "alarms": [
-                    {"time": "06:30", "repeat_days": ["Mon", "Wed", "Fri"], "enabled": True},
-                    {"time": "08:00", "repeat_days": ["Sat"], "enabled": False}
+                    {"time": "06:30", "repeat_days": ["Mon", "Wed", "Fri"]},
+                    {"time": "08:00", "repeat_days": ["Sat"]}
                 ]
             },
             {
                 "group_name": "Bedtime",
                 "alarms": [
-                    {"time": "22:30", "repeat_days": ["Every day"], "enabled": True}
+                    {"time": "22:30", "repeat_days": ["Daily"]}
                 ]
             },
             {
                 "group_name": "Medication",
                 "alarms": [
-                    {"time": "08:00", "repeat_days": ["Every day"], "enabled": True},
-                    {"time": "20:00", "repeat_days": ["Every day"], "enabled": True}
+                    {"time": "08:00", "repeat_days": ["Daily"]},
+                    {"time": "20:00", "repeat_days": ["Daily"]}
                 ]
             },
             {
                 "group_name": "School",
                 "alarms": [
-                    {"time": "07:15", "repeat_days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "enabled": True}
+                    {"time": "07:15", "repeat_days": ["Mon", "Tue", "Wed", "Thu", "Fri"]}
                 ]
             },
             {
                 "group_name": "Hydration Reminders",
                 "alarms": [
-                    {"time": "10:00", "repeat_days": ["Every day"], "enabled": False},
-                    {"time": "14:00", "repeat_days": ["Every day"], "enabled": False},
-                    {"time": "18:00", "repeat_days": ["Every day"], "enabled": False}
+                    {"time": "10:00", "repeat_days": ["Daily"]},
+                    {"time": "14:00", "repeat_days": ["Daily"]},
+                    {"time": "18:00", "repeat_days": ["Daily"]}
                 ]
             }
         ]
