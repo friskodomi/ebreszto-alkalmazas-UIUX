@@ -3,51 +3,45 @@ import random
 
 class Model:
     def __init__(self):
-        self.alarms = []
+        self.alarm_groups_data = []
 
-        # 2 tmp alarm
-        self.alarms = [
+        self.alarm_groups_data = [
             {
-                "time": "07:30",
-                "alarm_name": "Morning Run",
-                "repeat_days": ["Mon", "Wed", "Fri"]
+                "group_name": "Workout",
+                "alarms": [
+                    {"time": "06:30", "repeat_days": ["Mon", "Wed", "Fri"], "enabled": True},
+                    {"time": "08:00", "repeat_days": ["Sat"], "enabled": False}
+                ]
             },
             {
-                "time": "22:00",
-                "alarm_name": "Take Medication",
-                "repeat_days": ["Mon"]
+                "group_name": "Bedtime",
+                "alarms": [
+                    {"time": "22:30", "repeat_days": ["Every day"], "enabled": True}
+                ]
             },
             {
-                "time": "07:30",
-                "alarm_name": "Morning Run",
-                "repeat_days": ["Mon", "Wed", "Fri"]
+                "group_name": "Medication",
+                "alarms": [
+                    {"time": "08:00", "repeat_days": ["Every day"], "enabled": True},
+                    {"time": "20:00", "repeat_days": ["Every day"], "enabled": True}
+                ]
             },
             {
-                "time": "22:00",
-                "alarm_name": "Take Medication",
-                "repeat_days": ["Mon"]
+                "group_name": "School",
+                "alarms": [
+                    {"time": "07:15", "repeat_days": ["Mon", "Tue", "Wed", "Thu", "Fri"], "enabled": True}
+                ]
             },
             {
-                "time": "07:30",
-                "alarm_name": "Morning Run",
-                "repeat_days": ["Mon", "Wed", "Fri"]
-            },
-            {
-                "time": "22:00",
-                "alarm_name": "Take Medication",
-                "repeat_days": ["Mon"]
-            },
-            {
-                "time": "07:30",
-                "alarm_name": "Morning Run",
-                "repeat_days": ["Mon", "Wed", "Fri"]
-            },
-            {
-                "time": "22:00",
-                "alarm_name": "Take Medication",
-                "repeat_days": ["Mon"]
+                "group_name": "Hydration Reminders",
+                "alarms": [
+                    {"time": "10:00", "repeat_days": ["Every day"], "enabled": False},
+                    {"time": "14:00", "repeat_days": ["Every day"], "enabled": False},
+                    {"time": "18:00", "repeat_days": ["Every day"], "enabled": False}
+                ]
             }
         ]
+
         
     # For the Statistics View
     def get_statistics(self, period: str):
@@ -71,7 +65,7 @@ class Model:
 
     # For the Alarms View
     def save_alarm(self, alarm_data: dict):
-        self.alarms.append(alarm_data)
+        self.alarm_groups_data.append(alarm_data)
 
     def get_alarms(self):
-        return self.alarms
+        return self.alarm_groups_data

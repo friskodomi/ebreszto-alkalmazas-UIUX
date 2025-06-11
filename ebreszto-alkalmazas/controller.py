@@ -71,8 +71,6 @@ class Controller:
                                             (self.alarmsView_widget))
         self.ui.statisticsButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget
                                                  (self.statisticsView_widget))
-        self.ui.remindersButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget
-                                                 (self.remindersView_widget))
         self.ui.microphoneButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget
                                                  (self.chatView_widget))
 
@@ -81,8 +79,6 @@ class Controller:
                                                  (self.alarmsView_widget))
         self.ui.f_statisticsButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget
                                                  (self.statisticsView_widget))
-        self.ui.f_reminderButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget
-                                                 (self.remindersView_widget))
         self.ui.f_chatButton.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget
                                                  (self.chatView_widget))
 

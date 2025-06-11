@@ -20,13 +20,13 @@ class AlarmsView:
         self.scrollArea.setWidgetResizable(True)
 
         # --- Setup groupbox inside the scroll area ---
-        self.alarms_groupbox = QGroupBox("Alarms")
+        self.alarms_groupbox = QGroupBox("")
         self.alarms_groupbox.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
 
         # --- Layout for groupbox ---
         self.alarmLayout = QVBoxLayout()
-        self.alarmLayout.setSpacing(8)
-        self.alarmLayout.setContentsMargins(10, 10, 10, 10)
+        self.alarmLayout.setSpacing(0)
+        self.alarmLayout.setContentsMargins(0, 0, 10, 10)
         self.alarms_groupbox.setLayout(self.alarmLayout)
 
         # --- Layout for scrollAreaContent ---
@@ -43,7 +43,7 @@ class AlarmsView:
         if self.add_alarm_button:
             self.add_alarm_button.clicked.connect(controller.show_add_alarm_popup)
 
-    def create_alarm_widget(self, alarm_data: dict) -> QWidget:
+    def create_alarm_widget(self, alarm_data: dict, group_name: str) -> QWidget:
         ui_file = QFile("ui_files/alarm_widget.ui")
         ui_file.open(QFile.ReadOnly)
         loader = QUiLoader()
@@ -57,19 +57,52 @@ class AlarmsView:
         alarm_widget.findChild(QLabel, "minute_label").setText(alarm_data["time"].split(":")[1])
         alarm_widget.findChild(QLabel, "hour_minute_separator").setText(":")
         alarm_widget.findChild(QLabel, "days_repeat_label").setText(", ".join(alarm_data["repeat_days"]))
-        alarm_widget.findChild(QLabel, "alarm_name").setText(alarm_data["alarm_name"])
 
         return alarm_widget
 
-    def display_alarms(self, alarm_data_list: list[dict]):
-        # Clear existing alarm widgets
+
+    def display_alarms(self, alarm_groups_data: list[dict], controller=None):
+        # Clear layout
         while self.alarmLayout.count():
             item = self.alarmLayout.takeAt(0)
             if item.widget():
                 item.widget().deleteLater()
 
-        # Add each alarm widget
-        for alarm_data in alarm_data_list:
-            alarm_widget = self.create_alarm_widget(alarm_data)
-            self.alarmLayout.addWidget(alarm_widget)
+        for group_index, group in enumerate(alarm_groups_data):
+            group_name = group["group_name"]
+            alarms = group["alarms"]
+
+            for i, alarm_data in enumerate(alarms):
+                alarm_widget = self.create_alarm_widget(alarm_data, group_name)
+
+                # Show group_details only for first alarm in group
+                group_details = alarm_widget.findChild(QWidget, "group_details")
+                if i == 0:
+                    group_label = group_details.findChild(QLabel, "group_name")
+                    if group_label:
+                        group_label.setText(group_name)
+
+                    # Connect group-level delete buttons
+                    delete_group_btn = group_details.findChild(QPushButton, "deleteAlarm_button")
+                    if delete_group_btn and controller:
+                        delete_group_btn.clicked.connect(lambda _, g=group_name: controller.delete_group(g))
+
+                    # Optional second button could be "toggle all"
+                    toggle_all_btn = group_details.findChild(QPushButton, "deleteAlarm_button_2")
+                    if toggle_all_btn and controller:
+                        toggle_all_btn.clicked.connect(lambda _, g=group_name: controller.toggle_group(g))
+
+                else:
+                    group_details.hide()  # Hide for other alarms in group
+
+                # Connect per-alarm edit/delete (from alarm_details)
+                if controller:
+                    edit_btn = alarm_widget.findChild(QPushButton, "editAlarm_button")
+                    delete_btn = alarm_widget.findChild(QPushButton, "deleteAlarm_button")
+                    if edit_btn:
+                        edit_btn.clicked.connect(lambda _, g=group_name, i=i: controller.edit_alarm(g, i))
+                    if delete_btn:
+                        delete_btn.clicked.connect(lambda _, g=group_name, i=i: controller.delete_alarm(g, i))
+
+                self.alarmLayout.addWidget(alarm_widget)
 

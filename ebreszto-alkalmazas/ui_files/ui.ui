@@ -23,7 +23,7 @@
       <x>0</x>
       <y>0</y>
       <width>551</width>
-      <height>811</height>
+      <height>801</height>
      </rect>
     </property>
     <property name="font">
@@ -40,38 +40,6 @@
        <rect>
         <x>210</x>
         <y>150</y>
-        <width>50</width>
-        <height>50</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Roboto</family>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #b4c3d0;
-border-radius:25px;</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="icons_.qrc">
-        <normaloff>:/icon/icons/open.png</normaloff>:/icon/icons/open.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>30</width>
-        <height>30</height>
-       </size>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="f_reminderButton">
-      <property name="geometry">
-       <rect>
-        <x>465</x>
-        <y>250</y>
         <width>50</width>
         <height>50</height>
        </rect>
@@ -184,7 +152,6 @@ border-radius:25px;</string>
      </widget>
      <zorder>label</zorder>
      <zorder>f_statisticsButton</zorder>
-     <zorder>f_reminderButton</zorder>
      <zorder>f_alarmButton</zorder>
      <zorder>f_chatButton</zorder>
     </widget>
@@ -198,6 +165,9 @@ border-radius:25px;</string>
         <height>811</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -208,13 +178,56 @@ border-radius:25px;</string>
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>52</y>
+        <width>493</width>
+        <height>711</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+border-color: transparent;</string>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>491</width>
+         <height>709</height>
+        </rect>
+       </property>
+       <widget class="QGroupBox" name="alarms_groupbox">
+        <property name="geometry">
+         <rect>
+          <x>-1</x>
+          <y>-1</y>
+          <width>491</width>
+          <height>711</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-color: transparent;</string>
+        </property>
+        <property name="title">
+         <string>GroupBox</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
      <widget class="QPushButton" name="add_alarm_button">
       <property name="geometry">
        <rect>
-        <x>480</x>
-        <y>50</y>
-        <width>50</width>
-        <height>50</height>
+        <x>330</x>
+        <y>3</y>
+        <width>51</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
@@ -223,8 +236,8 @@ border-radius:25px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: transparent;
-border-radius:25px;</string>
+       <string notr="true">background-color: #d5e1ea;
+border-radius:40px;</string>
       </property>
       <property name="text">
        <string/>
@@ -239,45 +252,6 @@ border-radius:25px;</string>
         <height>30</height>
        </size>
       </property>
-     </widget>
-     <widget class="QScrollArea" name="scrollArea">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>120</y>
-        <width>493</width>
-        <height>643</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: transparent;</string>
-      </property>
-      <property name="widgetResizable">
-       <bool>true</bool>
-      </property>
-      <widget class="QWidget" name="scrollAreaWidgetContents">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>491</width>
-         <height>641</height>
-        </rect>
-       </property>
-       <widget class="QGroupBox" name="alarms_groupbox">
-        <property name="geometry">
-         <rect>
-          <x>-1</x>
-          <y>-1</y>
-          <width>491</width>
-          <height>641</height>
-         </rect>
-        </property>
-        <property name="title">
-         <string>GroupBox</string>
-        </property>
-       </widget>
-      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="statisticsPage">
@@ -602,64 +576,10 @@ border-radius:65px;</string>
      <zorder>microfon_button_7</zorder>
     </widget>
    </widget>
-   <widget class="QPushButton" name="remindersButton">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>810</y>
-      <width>80</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Roboto</family>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #4d5e6d;
-border-radius:40px;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="icons_.qrc">
-      <normaloff>:/menu/icons/bell.png</normaloff>:/menu/icons/bell.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>50</width>
-      <height>50</height>
-     </size>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="dsgn_mic_icon_background">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>750</y>
-      <width>110</width>
-      <height>110</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Roboto</family>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: #d5e1ea;
-border-radius:55px;</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QPushButton" name="alarmButton">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>130</x>
       <y>810</y>
       <width>80</width>
       <height>80</height>
@@ -691,7 +611,7 @@ border-radius:40px;</string>
    <widget class="QPushButton" name="statisticsButton">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>340</x>
       <y>810</y>
       <width>80</width>
       <height>80</height>
@@ -779,10 +699,10 @@ border-radius:40px;</string>
    <widget class="QPushButton" name="homeButton">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>760</y>
-      <width>90</width>
-      <height>90</height>
+      <x>20</x>
+      <y>810</y>
+      <width>81</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="font">
@@ -792,7 +712,7 @@ border-radius:40px;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: #4d5e6d;
-border-radius:45px;</string>
+border-radius:40px;</string>
     </property>
     <property name="text">
      <string/>
@@ -803,19 +723,17 @@ border-radius:45px;</string>
     </property>
     <property name="iconSize">
      <size>
-      <width>60</width>
-      <height>60</height>
+      <width>50</width>
+      <height>50</height>
      </size>
     </property>
    </widget>
-   <zorder>stackedWidget</zorder>
    <zorder>dsgn_menubase</zorder>
    <zorder>alarmButton</zorder>
    <zorder>statisticsButton</zorder>
-   <zorder>dsgn_mic_icon_background</zorder>
    <zorder>microphoneButton</zorder>
-   <zorder>remindersButton</zorder>
    <zorder>homeButton</zorder>
+   <zorder>stackedWidget</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
