@@ -16,6 +16,36 @@ class Model:
                 "time": "22:00",
                 "alarm_name": "Take Medication",
                 "repeat_days": ["Mon"]
+            },
+            {
+                "time": "07:30",
+                "alarm_name": "Morning Run",
+                "repeat_days": ["Mon", "Wed", "Fri"]
+            },
+            {
+                "time": "22:00",
+                "alarm_name": "Take Medication",
+                "repeat_days": ["Mon"]
+            },
+            {
+                "time": "07:30",
+                "alarm_name": "Morning Run",
+                "repeat_days": ["Mon", "Wed", "Fri"]
+            },
+            {
+                "time": "22:00",
+                "alarm_name": "Take Medication",
+                "repeat_days": ["Mon"]
+            },
+            {
+                "time": "07:30",
+                "alarm_name": "Morning Run",
+                "repeat_days": ["Mon", "Wed", "Fri"]
+            },
+            {
+                "time": "22:00",
+                "alarm_name": "Take Medication",
+                "repeat_days": ["Mon"]
             }
         ]
         

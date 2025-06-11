@@ -32,7 +32,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="homePage">
      <widget class="QPushButton" name="f_statisticsButton">
@@ -240,40 +240,44 @@ border-radius:25px;</string>
        </size>
       </property>
      </widget>
-     <widget class="QWidget" name="scrollWidget" native="true">
+     <widget class="QScrollArea" name="scrollArea">
       <property name="geometry">
        <rect>
-        <x>19</x>
-        <y>99</y>
-        <width>511</width>
-        <height>661</height>
+        <x>30</x>
+        <y>120</y>
+        <width>493</width>
+        <height>643</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: transparent;</string>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QScrollArea" name="scrollArea">
-         <property name="styleSheet">
-          <string notr="true">background-color: transparent;</string>
-         </property>
-         <property name="widgetResizable">
-          <bool>true</bool>
-         </property>
-         <widget class="QWidget" name="scrollAreaWidgetContents">
-          <property name="geometry">
-           <rect>
-            <x>0</x>
-            <y>0</y>
-            <width>491</width>
-            <height>641</height>
-           </rect>
-          </property>
-         </widget>
-        </widget>
-       </item>
-      </layout>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>491</width>
+         <height>641</height>
+        </rect>
+       </property>
+       <widget class="QGroupBox" name="alarms_groupbox">
+        <property name="geometry">
+         <rect>
+          <x>-1</x>
+          <y>-1</y>
+          <width>491</width>
+          <height>641</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>GroupBox</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="statisticsPage">
