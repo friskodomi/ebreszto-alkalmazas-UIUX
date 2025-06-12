@@ -32,7 +32,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="homePage">
      <widget class="QPushButton" name="f_statisticsButton">
@@ -207,9 +207,9 @@ border-color: transparent;</string>
         <property name="geometry">
          <rect>
           <x>-1</x>
-          <y>-1</y>
+          <y>-11</y>
           <width>491</width>
-          <height>711</height>
+          <height>721</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -547,6 +547,90 @@ border-radius:20px;</string>
       <property name="scaledContents">
        <bool>true</bool>
       </property>
+     </widget>
+     <widget class="QPlainTextEdit" name="userInputButton">
+      <property name="geometry">
+       <rect>
+        <x>33</x>
+        <y>630</y>
+        <width>441</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+color: #4d5e6d;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="sendButton">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>630</y>
+        <width>31</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #b4c3d0;
+border-radius:15px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="icons_.qrc">
+        <normaloff>:/icon/icons/open.png</normaloff>:/icon/icons/open.png</iconset>
+      </property>
+     </widget>
+     <widget class="QScrollArea" name="chatbotScrollArea">
+      <property name="geometry">
+       <rect>
+        <x>29</x>
+        <y>49</y>
+        <width>491</width>
+        <height>571</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+border-color: transparent;</string>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>489</width>
+         <height>569</height>
+        </rect>
+       </property>
+       <widget class="QGroupBox" name="chatGroupBox">
+        <property name="geometry">
+         <rect>
+          <x>-1</x>
+          <y>-11</y>
+          <width>491</width>
+          <height>581</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-color: transparent;</string>
+        </property>
+        <property name="title">
+         <string>GroupBox</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </widget>
    </widget>

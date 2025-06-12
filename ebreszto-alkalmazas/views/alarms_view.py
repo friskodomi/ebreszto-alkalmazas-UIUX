@@ -85,14 +85,5 @@ class AlarmsView:
                 else:
                     group_details.hide()  # Hide for other alarms in group
 
-                # Connect per-alarm edit/delete (from alarm_details)
-                if controller:
-                    edit_btn = alarm_widget.findChild(QPushButton, "editAlarm_button")
-                    delete_btn = alarm_widget.findChild(QPushButton, "deleteAlarm_button")
-                    if edit_btn:
-                        edit_btn.clicked.connect(lambda _, g=group_name, i=i: controller.edit_alarm(g, i))
-                    if delete_btn:
-                        delete_btn.clicked.connect(lambda _, g=group_name, i=i: controller.delete_alarm(g, i))
-
                 self.alarmLayout.addWidget(alarm_widget)
 
