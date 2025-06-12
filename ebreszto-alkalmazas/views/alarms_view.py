@@ -82,16 +82,6 @@ class AlarmsView:
                     if group_label:
                         group_label.setText(group_name)
 
-                    # Connect group-level delete buttons
-                    delete_group_btn = group_details.findChild(QPushButton, "deleteAlarm_button")
-                    if delete_group_btn and controller:
-                        delete_group_btn.clicked.connect(lambda _, g=group_name: controller.delete_group(g))
-
-                    # Optional second button could be "toggle all"
-                    toggle_all_btn = group_details.findChild(QPushButton, "deleteAlarm_button_2")
-                    if toggle_all_btn and controller:
-                        toggle_all_btn.clicked.connect(lambda _, g=group_name: controller.toggle_group(g))
-
                 else:
                     group_details.hide()  # Hide for other alarms in group
 

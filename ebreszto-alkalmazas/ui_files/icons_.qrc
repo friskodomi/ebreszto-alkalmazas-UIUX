@@ -16,6 +16,7 @@
     <file>icons/plus.png</file>
   </qresource>
   <qresource prefix="wholescreens">
+    <file>screens/chatbot.png</file>
     <file>screens/statistics.png</file>
     <file>screens/mainscreen.png</file>
     <file>screens/alarms.png</file>

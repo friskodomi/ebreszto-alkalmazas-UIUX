@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>550</width>
-    <height>921</height>
+    <height>936</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,7 +32,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="homePage">
      <widget class="QPushButton" name="f_statisticsButton">
@@ -182,9 +182,9 @@ border-radius:25px;</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>52</y>
+        <y>102</y>
         <width>493</width>
-        <height>711</height>
+        <height>661</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -200,7 +200,7 @@ border-color: transparent;</string>
          <x>0</x>
          <y>0</y>
          <width>491</width>
-         <height>709</height>
+         <height>659</height>
         </rect>
        </property>
        <widget class="QGroupBox" name="alarms_groupbox">
@@ -224,8 +224,8 @@ border-color: transparent;</string>
      <widget class="QPushButton" name="add_alarm_button">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>3</y>
+        <x>361</x>
+        <y>53</y>
         <width>51</width>
         <height>41</height>
        </rect>
@@ -236,7 +236,7 @@ border-color: transparent;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #d5e1ea;
+       <string notr="true">background-color: #e9eef3;
 border-radius:40px;</string>
       </property>
       <property name="text">
@@ -250,6 +250,72 @@ border-radius:40px;</string>
        <size>
         <width>30</width>
         <height>30</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="edit_button">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>53</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>30</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #4d5e6d;
+border-radius:20px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="icons_.qrc">
+        <normaloff>:/icon/icons/edit.png</normaloff>:/icon/icons/edit.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="delete_button">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>53</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>30</width>
+        <height>30</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: red;
+border-radius:20px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="icons_.qrc">
+        <normaloff>:/icon/icons/trash.png</normaloff>:/icon/icons/trash.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
        </size>
       </property>
      </widget>
@@ -463,79 +529,31 @@ border-radius:40px;</string>
      </widget>
     </widget>
     <widget class="QWidget" name="chatPage">
-     <widget class="QListView" name="chat_scroll">
+     <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
+        <y>-10</y>
         <width>551</width>
-        <height>801</height>
+        <height>811</height>
        </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="microfon_button_7">
-      <property name="geometry">
-       <rect>
-        <x>240</x>
-        <y>510</y>
-        <width>110</width>
-        <height>110</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Roboto</family>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #FFB52C;
-border-radius:55px;</string>
       </property>
       <property name="text">
        <string/>
       </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>:/menu/icons/microphone.svg</normaloff>:/menu/icons/microphone.svg</iconset>
+      <property name="pixmap">
+       <pixmap resource="icons_.qrc">:/wholescreens/screens/chatbot.png</pixmap>
       </property>
-      <property name="iconSize">
-       <size>
-        <width>80</width>
-        <height>80</height>
-       </size>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="dsgn_mic_icon_background_7">
-      <property name="geometry">
-       <rect>
-        <x>230</x>
-        <y>440</y>
-        <width>130</width>
-        <height>130</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Roboto</family>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: #F6FBFF;
-border-radius:65px;</string>
-      </property>
-      <property name="text">
-       <string>halo background vagyok</string>
-      </property>
-     </widget>
-     <zorder>chat_scroll</zorder>
-     <zorder>dsgn_mic_icon_background_7</zorder>
-     <zorder>microfon_button_7</zorder>
     </widget>
    </widget>
    <widget class="QPushButton" name="alarmButton">
     <property name="geometry">
      <rect>
-      <x>130</x>
+      <x>170</x>
       <y>810</y>
       <width>80</width>
       <height>80</height>
@@ -567,7 +585,7 @@ border-radius:40px;</string>
    <widget class="QPushButton" name="statisticsButton">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>300</x>
       <y>810</y>
       <width>80</width>
       <height>80</height>
@@ -602,7 +620,7 @@ border-radius:40px;</string>
       <x>0</x>
       <y>800</y>
       <width>551</width>
-      <height>101</height>
+      <height>121</height>
      </rect>
     </property>
     <property name="font">
@@ -623,7 +641,7 @@ border-radius:40px;</string>
    <widget class="QPushButton" name="microphoneButton">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>430</x>
       <y>810</y>
       <width>80</width>
       <height>80</height>
@@ -655,7 +673,7 @@ border-radius:40px;</string>
    <widget class="QPushButton" name="homeButton">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>40</x>
       <y>810</y>
       <width>81</width>
       <height>81</height>
@@ -684,12 +702,120 @@ border-radius:40px;</string>
      </size>
     </property>
    </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>890</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Roboto</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;
+color: #4d5e6d;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Home&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>890</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Roboto</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;
+color: #4d5e6d;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Alarms&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>890</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Roboto</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;
+color: #4d5e6d;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Statistics&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>890</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Roboto</family>
+      <pointsize>12</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;
+color: #4d5e6d;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;Chat&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
    <zorder>dsgn_menubase</zorder>
    <zorder>alarmButton</zorder>
    <zorder>statisticsButton</zorder>
    <zorder>microphoneButton</zorder>
    <zorder>homeButton</zorder>
    <zorder>stackedWidget</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_6</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
