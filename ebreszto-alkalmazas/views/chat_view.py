@@ -52,6 +52,7 @@ class ChatView:
 
         text = self.userinput_text.toPlainText()
         if text.strip():
+            self._scroll_to_bottom()
             self.userinput_text.clear()
             self.add_user_message(text)
             self.chat_controller.handle_user_input(text)

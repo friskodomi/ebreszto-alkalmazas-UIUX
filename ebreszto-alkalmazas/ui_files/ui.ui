@@ -552,15 +552,15 @@ border-radius:20px;</string>
       <property name="geometry">
        <rect>
         <x>33</x>
-        <y>630</y>
-        <width>441</width>
-        <height>141</height>
+        <y>680</y>
+        <width>431</width>
+        <height>91</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Roboto</family>
-        <pointsize>12</pointsize>
+        <pointsize>14</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -571,15 +571,15 @@ color: #4d5e6d;</string>
      <widget class="QPushButton" name="sendButton">
       <property name="geometry">
        <rect>
-        <x>490</x>
-        <y>630</y>
-        <width>31</width>
-        <height>31</height>
+        <x>476</x>
+        <y>680</y>
+        <width>41</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: #b4c3d0;
-border-radius:15px;</string>
+border-radius:20px;</string>
       </property>
       <property name="text">
        <string/>
@@ -588,6 +588,12 @@ border-radius:15px;</string>
        <iconset resource="icons_.qrc">
         <normaloff>:/icon/icons/open.png</normaloff>:/icon/icons/open.png</iconset>
       </property>
+      <property name="iconSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
      </widget>
      <widget class="QScrollArea" name="chatbotScrollArea">
       <property name="geometry">
@@ -595,7 +601,7 @@ border-radius:15px;</string>
         <x>29</x>
         <y>49</y>
         <width>491</width>
-        <height>571</height>
+        <height>621</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -611,7 +617,7 @@ border-color: transparent;</string>
          <x>0</x>
          <y>0</y>
          <width>489</width>
-         <height>569</height>
+         <height>619</height>
         </rect>
        </property>
        <widget class="QGroupBox" name="chatGroupBox">
@@ -620,7 +626,7 @@ border-color: transparent;</string>
           <x>-1</x>
           <y>-11</y>
           <width>491</width>
-          <height>581</height>
+          <height>631</height>
          </rect>
         </property>
         <property name="styleSheet">
