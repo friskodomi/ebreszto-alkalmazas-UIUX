@@ -455,9 +455,9 @@ border-radius:20px;</string>
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>510</y>
-        <width>471</width>
-        <height>221</height>
+        <y>520</y>
+        <width>470</width>
+        <height>250</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -471,9 +471,9 @@ border-radius:20px;</string>
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>180</y>
-        <width>471</width>
-        <height>221</height>
+        <y>175</y>
+        <width>470</width>
+        <height>250</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -486,8 +486,8 @@ border-radius:20px;</string>
      <widget class="QLabel" name="averageWaterLabel">
       <property name="geometry">
        <rect>
-        <x>420</x>
-        <y>455</y>
+        <x>430</x>
+        <y>465</y>
         <width>91</width>
         <height>31</height>
        </rect>
@@ -508,8 +508,8 @@ border-radius:20px;</string>
      <widget class="QLabel" name="averageSleepLabel">
       <property name="geometry">
        <rect>
-        <x>420</x>
-        <y>125</y>
+        <x>430</x>
+        <y>120</y>
         <width>91</width>
         <height>31</height>
        </rect>
@@ -552,9 +552,9 @@ border-radius:20px;</string>
       <property name="geometry">
        <rect>
         <x>33</x>
-        <y>680</y>
-        <width>431</width>
-        <height>91</height>
+        <y>702</y>
+        <width>490</width>
+        <height>70</height>
        </rect>
       </property>
       <property name="font">
@@ -565,24 +565,34 @@ border-radius:20px;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: transparent;
-color: #4d5e6d;</string>
+color: #4d5e6d;
+border: none;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="sendButton">
       <property name="geometry">
        <rect>
-        <x>476</x>
-        <y>680</y>
-        <width>41</width>
+        <x>420</x>
+        <y>655</y>
+        <width>101</width>
         <height>41</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: #b4c3d0;
 border-radius:20px;</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Send</string>
       </property>
       <property name="icon">
        <iconset resource="icons_.qrc">
@@ -594,6 +604,9 @@ border-radius:20px;</string>
         <height>20</height>
        </size>
       </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
      </widget>
      <widget class="QScrollArea" name="chatbotScrollArea">
       <property name="geometry">
@@ -601,12 +614,13 @@ border-radius:20px;</string>
         <x>29</x>
         <y>49</y>
         <width>491</width>
-        <height>621</height>
+        <height>601</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: transparent;
-border-color: transparent;</string>
+border-color: transparent;
+border: none;</string>
       </property>
       <property name="widgetResizable">
        <bool>true</bool>
@@ -616,8 +630,8 @@ border-color: transparent;</string>
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>489</width>
-         <height>619</height>
+         <width>491</width>
+         <height>601</height>
         </rect>
        </property>
        <widget class="QGroupBox" name="chatGroupBox">
@@ -626,11 +640,12 @@ border-color: transparent;</string>
           <x>-1</x>
           <y>-11</y>
           <width>491</width>
-          <height>631</height>
+          <height>611</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-color: transparent;</string>
+         <string notr="true">border-color: transparent;
+border: none;</string>
         </property>
         <property name="title">
          <string>GroupBox</string>
