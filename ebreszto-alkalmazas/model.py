@@ -1,10 +1,10 @@
-# modell/model.py
 import random
 
 class Model:
     def __init__(self):
         self.alarm_groups_data = []
 
+        # Dummy data for the application to view the alarms
         self.alarm_groups_data = [
             {
                 "group_name": "Workout",

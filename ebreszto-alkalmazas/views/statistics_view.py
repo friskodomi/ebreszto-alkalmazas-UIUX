@@ -4,6 +4,7 @@ from PySide6.QtCore import Qt
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_agg import FigureCanvasAgg
 from PIL import Image, ImageQt
+
 import io
 
 class StatisticsView:
@@ -14,10 +15,6 @@ class StatisticsView:
         self.week_button: QPushButton = self.statisticsPage.findChild(QPushButton, "weekButton")
         self.month_button: QPushButton = self.statisticsPage.findChild(QPushButton, "monthButton")
         self.year_button: QPushButton = self.statisticsPage.findChild(QPushButton, "yearButton")
-
-        # Set buttons as checkable
-        for btn in [self.week_button, self.month_button, self.year_button]:
-            btn.setCheckable(True)
 
         # Create button group to enforce mutual exclusivity
         self.button_group = QButtonGroup()
@@ -32,12 +29,16 @@ class StatisticsView:
         self.avg_sleep_label: QLabel = self.statisticsPage.findChild(QLabel, "averageSleepLabel")
         self.avg_water_label: QLabel = self.statisticsPage.findChild(QLabel, "averageWaterLabel")
 
+    # Connect controller with the buttons
     def connect_controller(self, controller):
         self.week_button.clicked.connect(lambda: controller.on_range_selected("Week"))
         self.month_button.clicked.connect(lambda: controller.on_range_selected("Month"))
         self.year_button.clicked.connect(lambda: controller.on_range_selected("Year"))
 
+    # Updates and displays the data from the model
     def update_chart(self, sleep_data, water_data, avg_sleep, avg_water):
+
+        # Create the chart using matplotlib 
         def create_chart(data, avg, title, ylabel, color):
             fig = Figure(figsize=(4, 2.5))
             canvas = FigureCanvasAgg(fig)
@@ -56,6 +57,7 @@ class StatisticsView:
             img = Image.open(buf)
             return QPixmap.fromImage(ImageQt.ImageQt(img))
 
+         # Sets the generated plot to a pixmap
         self.sleep_label.setPixmap(create_chart(sleep_data, avg_sleep, "Sleep Statistics", "Hours", "blue"))
         self.sleep_label.setAlignment(Qt.AlignCenter)
 

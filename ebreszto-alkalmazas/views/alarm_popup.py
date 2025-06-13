@@ -1,8 +1,6 @@
-from PySide6.QtWidgets import QDialog, QTimeEdit, QComboBox, QPushButton
+from PySide6.QtWidgets import QDialog, QPushButton
 from PySide6.QtUiTools import QUiLoader
-from PySide6.QtCore import QFile, QTime
-
-import ui_files.rc_icons
+from PySide6.QtCore import QFile
 
 class AlarmPopup(QDialog):
     def __init__(self, ui_file_path):
@@ -16,17 +14,18 @@ class AlarmPopup(QDialog):
             raise RuntimeError(f"Cannot open {self.ui_file_path}: {ui_file.errorString()}")
 
         loader = QUiLoader()
-        self.ui = loader.load(ui_file, self)  # load into this dialog
+        self.ui = loader.load(ui_file, self)
         ui_file.close()
 
         if self.ui is None:
             raise RuntimeError("Failed to load the UI file.")
         
-         # Buttons
+        # Buttons
         self.save_button: QPushButton = self.ui.findChild(QPushButton, "saveButton")
         self.cancel_button: QPushButton = self.ui.findChild(QPushButton, "cancelButton")
 
         self.show()
+        # Close pop up
         if self.save_button:
             self.save_button.clicked.connect(self.close)
         if self.cancel_button:
