@@ -4,6 +4,7 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtCore import QFile, Slot
 from PySide6.QtUiTools import QUiLoader
+from PySide6.QtWidgets import QGraphicsOpacityEffect
 
 import ui_files.rc_icons
 
@@ -40,14 +41,49 @@ class AlarmsView:
         if alarm_widget is None:
             return QWidget()
 
+        # Set labels
         alarm_widget.findChild(QLabel, "hour_label").setText(alarm_data["time"].split(":")[0])
         alarm_widget.findChild(QLabel, "minute_label").setText(alarm_data["time"].split(":")[1])
         alarm_widget.findChild(QLabel, "hour_minute_separator").setText(":")
         alarm_widget.findChild(QLabel, "days_repeat_label").setText(", ".join(alarm_data["repeat_days"]))
 
+        # Add toggle button
+        toggle = QPushButton()
+        toggle.setCheckable(True)
+        toggle.setChecked(alarm_data.get("enabled", True))
+        toggle.setFixedSize(50, 28)
+        toggle.setStyleSheet("""
+            QPushButton {
+                background-color: #b4c3d0;
+                border-radius: 14px;
+                border: 2px solid #9aaab9;
+            }
+            QPushButton:checked {
+                background-color: #4d5e6d;
+                border-radius: 14px;
+                border: 2px solid #3a4956;
+            }
+        """)
+
+        # Set initial opacity
+        opacity_effect = QGraphicsOpacityEffect()
+        alarm_widget.setGraphicsEffect(opacity_effect)
+
+        def update_opacity(checked):
+            opacity_effect.setOpacity(1.0 if checked else 0.4)
+
+        # Apply initial state
+        update_opacity(toggle.isChecked())
+
+        # Connect toggle to update opacity
+        toggle.toggled.connect(update_opacity)
+
+        # Insert toggle into layout
+        layout = alarm_widget.layout()
+        if layout:
+            layout.insertWidget(0, toggle)
+
         return alarm_widget
-
-
 
 
     def display_alarms(self, alarm_groups_data: list[dict], controller=None):
@@ -57,33 +93,27 @@ class AlarmsView:
                 item.widget().deleteLater()
 
         self.group_alarm_layouts.clear()
+        self.group_onoff_buttons = {}
 
         for group_index, group in enumerate(alarm_groups_data):
             group_id = f"group_{group_index}"
             group_name = group["group_name"]
             alarms = group["alarms"]
 
-            # --- Group wrapper ---
             group_widget = QWidget()
             group_layout = QVBoxLayout()
-            group_layout.setContentsMargins(0, 0, 0, 0)
             group_widget.setLayout(group_layout)
 
-            # --- Group header (manual) ---
+            # --- Group Header ---
             header_widget = QWidget()
             header_layout = QHBoxLayout()
-            header_layout.setContentsMargins(8, 2, 8, 2)
             header_widget.setLayout(header_layout)
 
-            group_label = QLabel(group_name)
-            group_label.setStyleSheet("font-weight: bold; font-size: 14px;")
-
-            toggle_button = QPushButton("▶")  # Start with collapsed indicator
+            toggle_button = QPushButton("▶")
             toggle_button.setCheckable(True)
-            toggle_button.setChecked(False)  # Start collapsed
+            toggle_button.setChecked(False)
             toggle_button.setFixedSize(28, 28)
             toggle_button.setObjectName(f"toggle_button_{group_id}")
-
             toggle_button.setStyleSheet("""
                 QPushButton {
                     background-color: #b4c3d0;
@@ -101,6 +131,7 @@ class AlarmsView:
                 }
             """)
 
+            group_label = QLabel(group_name)
             group_label.setStyleSheet("""
                 QLabel {
                     font-family: 'Roboto';
@@ -111,33 +142,56 @@ class AlarmsView:
                 }
             """)
 
+            onoff_button = QPushButton("On")
+            onoff_button.setText("")  # Optional: remove text for visual-only toggle
+            onoff_button.setFixedSize(40, 20)
+            onoff_button.setCheckable(True)
+            onoff_button.setObjectName(f"onoff_button_{group_id}")
+            onoff_button.setStyleSheet("""
+                QPushButton {
+                    background-color: #b4c3d0;
+                    border-radius: 10px;
+                }
+                QPushButton:checked {
+                    background-color:#4d5e6d;
+                    border-radius: 10px;
+                }
+            """)
+
             header_layout.addWidget(toggle_button)
             header_layout.addWidget(group_label)
             header_layout.addStretch()
+            header_layout.addWidget(onoff_button)
 
             group_layout.addWidget(header_widget)
 
-            # --- Alarm container ---
+            # --- Alarms Container ---
             alarms_container = QWidget()
             alarms_layout = QVBoxLayout()
-            alarms_layout.setContentsMargins(20, 4, 4, 4)
             alarms_container.setLayout(alarms_layout)
 
             for alarm_data in alarms:
                 alarm_widget = self.create_alarm_widget(alarm_data)
                 alarms_layout.addWidget(alarm_widget)
 
-            alarms_container.setVisible(False)  # Hide by default
-
+            alarms_container.setVisible(False)
             group_layout.addWidget(alarms_container)
 
             self.group_alarm_layouts[group_id] = alarms_container
+            self.group_onoff_buttons[group_id] = onoff_button
 
             toggle_button.clicked.connect(lambda checked, gid=group_id: self.toggle_group(gid, checked))
+            onoff_button.clicked.connect(lambda checked, gid=group_id: self.toggle_group_onoff(gid, checked))
 
             self.containerLayout.addWidget(group_widget)
 
         self.containerLayout.addStretch()
+
+
+    def toggle_group_onoff(self, group_id: str, checked: bool):
+        # Placeholder logic: for now, just print the status.
+        print(f"Group '{group_id}' toggled {'ON' if checked else 'OFF'}")
+        # Future idea: disable all alarms in that group visually or logically.
 
 
 
