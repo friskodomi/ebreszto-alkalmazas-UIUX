@@ -1,68 +1,5 @@
 from PySide6.QtWidgets import (
     QPushButton, QWidget, QVBoxLayout, QScrollArea,
-    QLabel, QSizePolicy, QFormLayout, QGroupBox, QHBoxLayout
-)
-from PySide6.QtCore import QFile
-from PySide6.QtUiTools import QUiLoader
-
-import ui_files.rc_icons
-
-class AlarmsView:
-    def __init__(self, alarmPage_widget):
-        self.alarmPage = alarmPage_widget
-
-        self.add_alarm_button: QPushButton = self.alarmPage.findChild(QPushButton, "add_alarm_button")
-        self.scrollArea: QScrollArea = self.alarmPage.findChild(QScrollArea, "scrollArea")
-
-        # --- Setup container for scroll area ---
-        self.scrollAreaContent = QWidget()
-        self.scrollArea.setWidget(self.scrollAreaContent)
-        self.scrollArea.setWidgetResizable(True)
-
-        # --- Setup groupbox inside the scroll area ---
-        self.alarms_groupbox = QGroupBox("")
-        self.alarms_groupbox.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Minimum)
-
-        # --- Layout for groupbox ---
-        self.alarmLayout = QVBoxLayout()
-        self.alarmLayout.setSpacing(0)
-        self.alarmLayout.setContentsMargins(0, 0, 10, 10)
-        self.alarms_groupbox.setLayout(self.alarmLayout)
-
-        # --- Layout for scrollAreaContent ---
-        self.containerLayout = QVBoxLayout()
-        self.containerLayout.addWidget(self.alarms_groupbox)
-        self.containerLayout.addStretch()  # Keep alarms top-aligned
-        self.scrollAreaContent.setLayout(self.containerLayout)
-
-        # Set size policy to allow vertical expansion
-        size_policy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.MinimumExpanding)
-        self.alarms_groupbox.setSizePolicy(size_policy)
-
-    def connect_controller(self, controller):
-        if self.add_alarm_button:
-            self.add_alarm_button.clicked.connect(controller.show_add_alarm_popup)
-
-    def create_alarm_widget(self, alarm_data: dict, group_name: str) -> QWidget:
-        ui_file = QFile("ui_files/alarm_widget.ui")
-        ui_file.open(QFile.ReadOnly)
-        loader = QUiLoader()
-        alarm_widget = loader.load(ui_file)
-        ui_file.close()
-
-        if alarm_widget is None:
-            return QWidget()
-
-        alarm_widget.findChild(QLabel, "hour_label").setText(alarm_data["time"].split(":")[0])
-        alarm_widget.findChild(QLabel, "minute_label").setText(alarm_data["time"].split(":")[1])
-        alarm_widget.findChild(QLabel, "hour_minute_separator").setText(":")
-        alarm_widget.findChild(QLabel, "days_repeat_label").setText(", ".join(alarm_data["repeat_days"]))
-
-        return alarm_widget
-
-
-    from PySide6.QtWidgets import (
-    QPushButton, QWidget, QVBoxLayout, QScrollArea,
     QLabel, QSizePolicy, QGroupBox, QHBoxLayout, QFrame
 )
 from PySide6.QtCore import QFile, Slot
@@ -141,11 +78,38 @@ class AlarmsView:
             group_label = QLabel(group_name)
             group_label.setStyleSheet("font-weight: bold; font-size: 14px;")
 
-            toggle_button = QPushButton("▼")
+            toggle_button = QPushButton("▶")  # Start with collapsed indicator
             toggle_button.setCheckable(True)
-            toggle_button.setChecked(True)
-            toggle_button.setFixedSize(24, 24)
+            toggle_button.setChecked(False)  # Start collapsed
+            toggle_button.setFixedSize(28, 28)
             toggle_button.setObjectName(f"toggle_button_{group_id}")
+
+            toggle_button.setStyleSheet("""
+                QPushButton {
+                    background-color: #b4c3d0;
+                    border-radius:10px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: #333;
+                }
+                QPushButton:pressed {
+                    background-color: #b4c3d0;
+                    border-radius:10px;
+                    font-size: 16px;
+                    font-weight: bold;
+                    color: #333;
+                }
+            """)
+
+            group_label.setStyleSheet("""
+                QLabel {
+                    font-family: 'Roboto';
+                    font-size: 24px;
+                    background-color: transparent;
+                    font-weight: bold;
+                    color: #4d5e6d;
+                }
+            """)
 
             header_layout.addWidget(toggle_button)
             header_layout.addWidget(group_label)
@@ -163,18 +127,18 @@ class AlarmsView:
                 alarm_widget = self.create_alarm_widget(alarm_data)
                 alarms_layout.addWidget(alarm_widget)
 
+            alarms_container.setVisible(False)  # Hide by default
+
             group_layout.addWidget(alarms_container)
 
-            # --- Store reference for toggling ---
             self.group_alarm_layouts[group_id] = alarms_container
 
-            # --- Connect toggle ---
             toggle_button.clicked.connect(lambda checked, gid=group_id: self.toggle_group(gid, checked))
 
-            # --- Add to scroll area ---
             self.containerLayout.addWidget(group_widget)
 
         self.containerLayout.addStretch()
+
 
 
 
