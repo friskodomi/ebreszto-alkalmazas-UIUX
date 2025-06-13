@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>539</width>
-    <height>98</height>
+    <height>53</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,7 +29,7 @@
    <property name="spacing">
     <number>0</number>
    </property>
-   <item row="1" column="4" rowspan="2">
+   <item row="0" column="4" rowspan="2">
     <widget class="QWidget" name="alarm_details" native="true">
      <layout class="QHBoxLayout" name="horizontalLayout">
       <property name="spacing">
@@ -143,83 +143,6 @@ color: #4d5e6d;</string>
          </size>
         </property>
        </spacer>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="0" column="4">
-    <widget class="QWidget" name="group_details" native="true">
-     <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="2">
-       <spacer name="horizontalSpacer">
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0">
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLabel" name="group_name">
-        <property name="font">
-         <font>
-          <family>Roboto</family>
-          <pointsize>24</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: transparent;
-color: #4d5e6d;</string>
-        </property>
-        <property name="text">
-         <string>Morning Run</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QPushButton" name="toggle_button">
-        <property name="minimumSize">
-         <size>
-          <width>30</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-        background-color: #b4c3d0;
-		border-radius:10px;
-}
-QPushButton:checked {
-        background-color:#4d5e6d;
-		border-radius:10px;
-}</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="icon">
-         <iconset resource="icons_.qrc">
-          <normaloff>:/icon/icons/open.png</normaloff>:/icon/icons/open.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>15</width>
-          <height>15</height>
-         </size>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-       </widget>
       </item>
      </layout>
     </widget>
