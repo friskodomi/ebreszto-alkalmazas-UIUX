@@ -55,6 +55,7 @@ class Controller:
         # For the Statistics Page
         self.statisticsPage.connect_controller(self)
         self.alarmPage.connect_controller(self)
+        self.homePage.connect_controller(self)
         self.on_range_selected("Week")
         self.statisticsPage.week_button.setChecked(True)
 
@@ -96,6 +97,12 @@ class Controller:
         self.update_alarm_list()
 
         popup = AlarmPopup("ui_files/popup.ui")
+        popup.exec()
+
+    def show_alarm_sim(self):
+        from views.active_alarm_popup import ActiveAlarmPopup
+
+        popup = ActiveAlarmPopup("ui_files/active_alarm.ui")
         popup.exec()
 
     def add_alarm(self, alarm_data):

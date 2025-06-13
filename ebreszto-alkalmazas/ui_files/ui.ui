@@ -32,7 +32,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="homePage">
      <widget class="QPushButton" name="f_statisticsButton">
@@ -70,7 +70,7 @@ border-radius:25px;</string>
      <widget class="QPushButton" name="f_alarmButton">
       <property name="geometry">
        <rect>
-        <x>40</x>
+        <x>464</x>
         <y>720</y>
         <width>50</width>
         <height>50</height>
@@ -150,10 +150,42 @@ border-radius:25px;</string>
        </size>
       </property>
      </widget>
+     <widget class="QPushButton" name="acitve_alarm_simButton">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>720</y>
+        <width>50</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="icons_.qrc">
+        <normaloff>:/menu/icons/bell.png</normaloff>:/menu/icons/bell.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>30</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
      <zorder>label</zorder>
      <zorder>f_statisticsButton</zorder>
      <zorder>f_alarmButton</zorder>
      <zorder>f_chatButton</zorder>
+     <zorder>acitve_alarm_simButton</zorder>
     </widget>
     <widget class="QWidget" name="alarmPage">
      <widget class="QLabel" name="alarmPageBackgrounds">
