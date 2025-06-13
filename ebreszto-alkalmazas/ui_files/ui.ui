@@ -32,7 +32,7 @@
      </font>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="homePage">
      <widget class="QPushButton" name="f_statisticsButton">
@@ -189,7 +189,7 @@ border-radius:25px;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: transparent;
-border-color: transparent;</string>
+border: none;</string>
       </property>
       <property name="widgetResizable">
        <bool>true</bool>
@@ -199,8 +199,8 @@ border-color: transparent;</string>
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>491</width>
-         <height>659</height>
+         <width>493</width>
+         <height>661</height>
         </rect>
        </property>
        <widget class="QGroupBox" name="alarms_groupbox">
@@ -213,7 +213,8 @@ border-color: transparent;</string>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-color: transparent;</string>
+         <string notr="true">border-color: transparent;
+border: none;</string>
         </property>
         <property name="title">
          <string>GroupBox</string>
